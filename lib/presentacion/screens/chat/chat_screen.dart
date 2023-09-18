@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:si_no_app/presentacion/widgets/chat/message_burbuja.dart';
+import 'package:si_no_app/presentacion/widgets/chat/otro_message_burbuja.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -52,8 +54,13 @@ class _Chatview extends StatelessWidget{
       return SafeArea(
         child: Padding(padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(children: [
-              Expanded(child: Container(
-            color: const Color.fromARGB(255, 61, 175, 86),
+              Expanded(child: ListView.builder(
+                itemCount: 100,
+                itemBuilder: (context, index){
+                  return(index % 2 == 0)
+                  ? const OtroMyMessageBubble() 
+                  : MyMessageBubble();
+                },
           )),
           Text("ensalada")
         ],)
