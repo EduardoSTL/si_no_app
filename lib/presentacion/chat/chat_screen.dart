@@ -19,6 +19,7 @@ class ChatScreen extends StatelessWidget {
           title: const Text('Eduardo'),
           centerTitle: false,
       ),
+      body: _Chatview(),
       //* Barra de chat (nuevo widget):
       bottomNavigationBar: BottomAppBar(
         child: Row(
@@ -42,6 +43,22 @@ class ChatScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _Chatview extends StatelessWidget{  
+  @override
+  Widget build(BuildContext context) {
+      return SafeArea(
+        child: Padding(padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(children: [
+              Expanded(child: Container(
+            color: const Color.fromARGB(255, 61, 175, 86),
+          )),
+          Text("Hola mundo")
+        ],)
+      )
     );
   }
 }
