@@ -62,7 +62,7 @@ class _Chatview extends StatelessWidget{
                   : MyMessageBubble();
                 },
           )),
-          Text("ensalada")
+          Text("atun")
         ],)
       )
     );
