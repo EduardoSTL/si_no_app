@@ -16,7 +16,7 @@ class ChatScreen extends StatelessWidget {
             ),
           ),
           ),
-          title: const Text('Eduardo'),
+          title: const Text('Juan Perez'),
           centerTitle: false,
       ),
       body: _Chatview(),
