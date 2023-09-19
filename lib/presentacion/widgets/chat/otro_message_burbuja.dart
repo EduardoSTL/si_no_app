@@ -17,7 +17,7 @@ class OtroMyMessageBubble extends StatelessWidget {
             ),
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Text('Laboris deserunt voluptate cillum eiusmod.', 
+              child: Text('hojuelas de maiz', 
               style: TextStyle(color: Colors.black),),
             ),
         ),
