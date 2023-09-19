@@ -7,6 +7,7 @@ class ChatProvider extends ChangeNotifier{
     Message(text: 'Ya regresaste?', fromWho: FromWho.other),
 
   ];
+
   Future<void> sendMessage(String text) async{
     
   }
