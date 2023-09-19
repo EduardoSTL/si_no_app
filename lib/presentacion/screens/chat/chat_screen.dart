@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart'; //herramientas para crear interfaz de usuario
 import 'package:si_no_app/presentacion/widgets/chat/message_burbuja.dart';
 import 'package:si_no_app/presentacion/widgets/chat/otro_message_burbuja.dart';
+import 'package:si_no_app/presentacion/widgets/shared/message_field_box.dart';
 
 //interfaz de usuario del chat que es inmutable:
 class ChatScreen extends StatelessWidget {
@@ -25,7 +26,8 @@ class ChatScreen extends StatelessWidget {
       ),
       body: _Chatview(),
       //* Vista principal de chat (nuevo widget):
-      bottomNavigationBar: BottomAppBar(
+      //! buttomNav Bar comment:
+      /* bottomNavigationBar: BottomAppBar(
         child: Row(
           children: [
             IconButton(
@@ -45,7 +47,7 @@ class ChatScreen extends StatelessWidget {
               icon: const Icon(Icons.send),
             ),
           ],),
-      ),
+      ), */
     );
   }
 }
@@ -74,8 +76,8 @@ class _Chatview extends StatelessWidget{
                   : MyMessageBubble();
                 },
           )),
-          //texto en posicion de pie de pag
-          Text("atun")
+          //* caja de texto de mensajes
+          const MessageFieldBox()
         ],)
       )
     );
