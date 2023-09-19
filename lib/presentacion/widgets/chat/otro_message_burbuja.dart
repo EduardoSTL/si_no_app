@@ -22,8 +22,21 @@ class OtroMyMessageBubble extends StatelessWidget {
             ),
         ),
         const SizedBox(
-          height: 10)
+          height: 5),
+        const _ImageBubble(),
       ],
+    );
+  }
+}
+
+class _ImageBubble extends StatelessWidget {
+  const _ImageBubble({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Image.network('https://yesno.wtf/assets/no/6-4bf0a784c173f70a0cab96efd9ff80c9.gif'),
     );
   }
 }
