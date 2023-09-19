@@ -49,7 +49,7 @@ class _ImageBubble extends StatelessWidget {
           height: 150,
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: const Text('estoy enviando una imagen'),
-          );
+        );
       }),
     );
   }
