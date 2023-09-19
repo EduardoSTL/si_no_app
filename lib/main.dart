@@ -14,8 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Si No App',
       debugShowCheckedModeBanner: false,
+      //llama al AppTheme
       theme: AppTheme(
         selectedColor: 3).theme(),
+      //* main widget de la app(ChatScreen)
       home: const ChatScreen(),
       /* home: Scaffold(
         appBar: AppBar(title: const Text('Material App Bar')
