@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class YesNoModel{
   String answer;
   bool forced;
@@ -8,4 +10,11 @@ class YesNoModel{
     required this.forced,
     required this.image
   });
+
+  factory YesNoModel.fromJsonMap(Map<String, dynamic>json) =>
+  YesNoModel(
+    answer: json['answer'], 
+    forced: json['answer'], 
+    image: json['answer'],
+  );
 }
