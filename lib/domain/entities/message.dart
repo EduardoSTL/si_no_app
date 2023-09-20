@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 enum FromWho{mine, other}
 
+//* clase para definir el objeto message y sus componentes
 class Message{
   final String text;
   final String? imageUrl;
