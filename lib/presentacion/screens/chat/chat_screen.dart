@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart'; //herramientas para crear interfaz de usuario
+import 'package:provider/provider.dart';
+import 'package:si_no_app/domain/entities/message.dart';
+import 'package:si_no_app/presentacion/provider/chat_provider.dart';
 import 'package:si_no_app/presentacion/widgets/chat/message_burbuja.dart';
 import 'package:si_no_app/presentacion/widgets/chat/otro_message_burbuja.dart';
 import 'package:si_no_app/presentacion/widgets/shared/message_field_box.dart';
@@ -56,26 +59,28 @@ class _Chatview extends StatelessWidget{
   //construccion de la vista del chat
   @override
   Widget build(BuildContext context) {
+
+    final chatProvider = context.watch<ChatProvider>();
+    
       return SafeArea(
-        child: Padding(padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(children: [
             //Expanded se utiliza para ocupar todo el espacio vertical disponible
               Expanded(
                 //* ListView crea una lista con un total(100 elements)
                 child: ListView.builder(
-                  //elements totales en la lista:
-                itemCount: 100,
+                //instanciamos la class ChatProvider para involucrar todos sus widget
+                itemCount: chatProvider.messageList.length,
                 //constructor de elementos que se llama para cada elemento en la lista. 
                 //Toma dos argumentos: context e index. context es el contexto de la aplicación e index es el índice del elemento actual que se está construyendo en la lista.                
                 itemBuilder: (context, index){
-                  //Cuando el índice se divide por 2 y el residuo es igual a 0, significa que el índice es par. 
-                  //Si el residuo no es igual a 0, el índice es impar.
-                  return(index % 2 == 0)
-                  //operador ternario
-                  ? const OtroMyMessageBubble() 
+                  final message = chatProvider.messageList[index];
+                  return(message.fromWho == FromWho.other)
+                  ? OtroMyMessageBubble()
                   : MyMessageBubble();
-                },
-          )),
+                },)
+                ),
           //* caja de texto de mensajes
           const MessageFieldBox()
         ],)
