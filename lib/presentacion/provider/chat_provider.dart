@@ -21,6 +21,7 @@ class ChatProvider extends ChangeNotifier{
     moveScrollToBottom();
   }
 
+  //funcion que retrasa la milisemias de s de la carga de las burbujas 
   Future<void> moveScrollToBottom() async {
     await Future.delayed(const Duration(microseconds: 100));
     chatScrollController.animateTo(
