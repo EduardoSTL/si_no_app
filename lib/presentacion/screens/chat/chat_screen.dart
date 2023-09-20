@@ -70,6 +70,7 @@ class _Chatview extends StatelessWidget{
               Expanded(
                 //* ListView crea una lista con un total(100 elements)
                 child: ListView.builder(
+                controller: chatProvider.chatScrollController,
                 //instanciamos la class ChatProvider para involucrar todos sus widget
                 itemCount: chatProvider.messageList.length,
                 //constructor de elementos que se llama para cada elemento en la lista. 
