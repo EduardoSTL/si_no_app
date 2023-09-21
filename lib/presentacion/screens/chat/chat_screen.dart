@@ -78,7 +78,7 @@ class _Chatview extends StatelessWidget{
                 itemBuilder: (context, index){
                   final message = chatProvider.messageList[index];
                   return(message.fromWho == FromWho.other)
-                  ? OtroMyMessageBubble()
+                  ? OtroMyMessageBubble(message: message)
                                  //!(property : value)                         
                   : MyMessageBubble(message:message);
                 },)

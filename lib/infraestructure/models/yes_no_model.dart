@@ -11,7 +11,7 @@ class YesNoModel {
         required this.image,
     });
 
-    factory YesNoModel.fromJson(Map<String, dynamic> json) => YesNoModel(
+    factory YesNoModel.fromJsonMap(Map<String, dynamic> json) => YesNoModel(
         answer: json["answer"],
         forced: json["forced"],
         image: json["image"],
@@ -24,7 +24,7 @@ class YesNoModel {
     };
 
     Message toMessageEntity() => Message(
-      text: answer == 'yes' ? 'Si' : 'No', 
+      text: answer == 'si' ? 'Si' : 'No', 
       fromWho: FromWho.other,
       imageUrl: image
       );
